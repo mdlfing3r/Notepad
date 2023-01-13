@@ -122,7 +122,7 @@ int main() {
 	getchar();
 	getchar();
 	system("CLS");
-	std::cout << "Введите текстовое содержимое файла \n" << "(для сохранения файла введите команду \"-save\") " << std::endl;
+	std::cout << "Введите текстовое содержимое файла \n" << "(для сохранения файла введите команду \"-s\") " << std::endl;
 	
 	while (textBank.find(end_command) == std::string::npos) {
 		std::ofstream MyFile(fullName);
@@ -131,7 +131,7 @@ int main() {
 		MyFile.close();
 	}
 
-	textBank.erase(textBank.size() - end_command.size() - 2, textBank.size() + end_command.size());
+	textBank.erase(textBank.size() - end_command.size() - 1, textBank.size() + end_command.size());
 	std::ofstream MyFile(fullName);
 	MyFile << textBank;
 	MyFile.close();
